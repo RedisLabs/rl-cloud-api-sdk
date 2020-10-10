@@ -40,8 +40,18 @@ export type Database = {
     clustering: DatabaseClustering,
     security: DatabaseSecurity,
     modules: DatabaseModule[],
-    alerts: any[],
+    alerts: DatabaseAlert[],
     [key: string]: any
+}
+
+/**
+ * The database alerts object
+ * @param name The name of the alert
+ * @param value The value of the alert
+ */
+export type DatabaseAlert = {
+    name: 'dataset-size' | 'throughput-higher-than' | 'throughput-lower-than' | 'latency' | 'syncsource-error' | 'syncsource-lag',
+    value: number
 }
 
 /**
@@ -74,8 +84,7 @@ export type DatabaseSecurity = {
  */
 export type DatabaseClustering = {
     numberOfShards?: number,
-    regexRules?: any[],
-    hashingPolicy: any[],
+    regexRules?: string[],
     [key: string]: any
 }
 

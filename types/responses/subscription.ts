@@ -56,12 +56,10 @@ export type SubscriptionCloudDetails = {
  * Subscription CIDR whitelists
  * @param cidr_ips The list of the cidr ips
  * @param security_group_ids The list of the security groups
- * @param the list of the errors
  */
 export type SubscriptionCidrWhitelist = {
-    cidr_ips: string[],
-    security_group_ids: string[],
-    errors: any[]
+    cidr_ips?: string[],
+    security_group_ids?: string[]
 }
 
 /**

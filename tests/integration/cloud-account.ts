@@ -11,7 +11,7 @@ const client = new CloudAPISDK({
 
 describe('Testing cloud account', async function() {
     this.timeout(10 * 60 * 1000);
-    let cloudAccountId: number = -1;
+    let cloudAccountId = -1;
     it('createCloudAccount', async () => {
         const response = await client.createCloudAccount({
             name: 'My cloud account',
